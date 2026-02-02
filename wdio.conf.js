@@ -86,7 +86,7 @@ export const config = {
     // gets prepended directly.
     // baseUrl: 'http://localhost:8080',
     //
-    // Default timeout for all waitFor* commands.
+    // Default timeout for all waitFor* commands. 
     waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request

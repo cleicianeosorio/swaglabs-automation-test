@@ -1,0 +1,24 @@
+{
+    "usuarios": {
+        "valido": {
+            "usuario": "standard_user",
+            "senha": "secret_sauce"
+    },
+    "senhaIncorreta": {
+        "usuario": "standard_user",
+        "senha": "senha_errada_123"
+    },
+    "usuarioIncorreto": {
+        "usuario": "usuario_inexistente",
+        "senha": "secret_sauce"
+    },
+    "ambosIncorretos": {
+        "usuario": "usuario_fake",
+        "senha": "senha_fake"
+    }
+},
+    "mensagens": {
+        "erroBloqueado": "Epic sadface: Sorry, this user has been locked out.",
+        "erroInvalido": "Epic sadface: Username and password do not match any user in this service"
+    }
+}

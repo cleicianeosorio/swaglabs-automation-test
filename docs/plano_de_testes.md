@@ -9,7 +9,7 @@ Garantir a estabilidade das funcionalidades críticas, como login, gerenciamento
 
 Casos de Teste (CTs)
 
-C-001 - Realizar login com sucesso (Stand User)
+C-001 - Realizar login com sucesso (Stand User) 
 
 Dado que o usuário acessa a URL da loja Swag Labs.
 E insere o nome de usuário standard_user no campo "Username".
@@ -18,7 +18,7 @@ Quando clica no botão "Login".
 Então deve ser redirecionado corretamente para a página de inventário (PLP - Product Listing Page)
 E validar que ocorreu o direcionamento para a tela correta
 
-C-002 - Login com credenciais inválidas (Senha incorreta)
+C-002 - Login com credenciais inválidas (Senha incorreta) 
 
 Contexto: Validar se o sistema impede o acesso e informa o erro corretamente ao inserir uma senha que não corresponde ao usuário.
 
@@ -49,7 +49,7 @@ Quando clica no botão "Login".
 Então o sistema deve impedir o redirecionamento para a página de inventário. 
 E deve exibir a mensagem de erro: "Epic sadface: Username and password do not match any user in this service"
 
-C-005 - Validar fechamento da mensagem de erro de login
+C-005 - Validar fechamento da mensagem de erro de login 
 
 Contexto: Garantir que o usuário consiga limpar a interface de avisos de erro após uma tentativa falha
 
@@ -57,7 +57,6 @@ Dado que o usuário está na página de login do Swag Labs.
 E uma mensagem de erro de autenticação está sendo exibida (após uma tentativa inválida).
 Quando o usuário clica no botão "X" localizado no canto da mensagem de alerta.
 Então o componente de mensagem de erro deve desaparecer da tela.
-E os campos de "Username" e "Password" devem perder a sinalização visual de erro
 
 C-006 - Validar Ordenação de Produtos
 
@@ -110,7 +109,7 @@ CT-009: Adição de Itens ao Carrinho e Validação do Badge
 Contexto: Validar a funcionalidade crítica de adicionar itens por diferentes caminhos e a atualização correta do contador do carrinho (badge)
 
 Cenário 1 (Adição de produto no carrinho):
-Dado que o usuário está na página de inventário ou de detalhes.
+Dado que o usuário está na página de inventário ou de detalhes do produto
 Quando clica no botão "Add to cart" do produto.
 Então o ícone do carrinho deve exibir o badge com o número "1".
 E o botão do "Add to cart" deve mudar o texto para "Remove"
@@ -120,7 +119,7 @@ Cenário 2 (Validação de Quantidade):
 Dado que o usuário adicionou 3 produtos distintos.
 Então o badge do carrinho deve exibir exatamente o número "3".
 
-CT-010: Remoção de Itens do Carrinho e Atualização do Badge
+CT-010: Remoção de Itens do Carrinho e Atualização do Badge 
 
 Contexto: Garantir que o usuário consiga desistir de uma compra e que o sistema atualize o status do produto e o contador do carrinho em tempo real.
 
