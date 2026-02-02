@@ -63,6 +63,71 @@ class InventoryPage {
     get addBoltTShirtButton() {
     return $('#add-to-cart-sauce-labs-bolt-t-shirt')
     }
+
+    get carrinhoContainer() { 
+        return $('#shopping_cart_container'); 
+    }
+
+    get badgeCarrinho() { 
+        return $('[data-test="shopping-cart-badge"]'); 
+    }
+
+    get linkCarrinho() { 
+        return $('[data-test="shopping-cart-link"]'); 
+    }
+
+    get produtos() { 
+        return $$('.inventory_item'); 
+    }
+
+    async produtoPorNome(nomeProduto) {
+        for (const p of await this.produtos) {
+            const nome = await p.$('.inventory_item_name').getText();
+            if (nome === nomeProduto) return p;
+        }
+        return null;
+    }
+
+    async getBotaoDoProduto(nomeProduto) {
+        const produto = await this.produtoPorNome(nomeProduto);
+        return produto.$('button');
+    }
+
+    async getBadgeCount() {
+        const badge = await this.badgeCarrinho;
+        if (await badge.isExisting() && await badge.isDisplayed()) {
+        const texto = await badge.getText();
+        return parseInt(texto);
+    }
+    return 0;
+    }
+
+    async isBadgeVisivel() {
+        return await this.badgeCarrinho.isDisplayed();
+    }
+
+    async addProdutoPorNome(nomeProduto) {
+        const produto = await this.produtoPorNome(nomeProduto);
+        const botao = await produto.$('button');
+        await botao.click();
+    }
+
+    async removeProdutoPorNome(nomeProduto) {
+        const produto = await this.produtoPorNome(nomeProduto);
+        const botao = await produto.$('button');
+        if ((await botao.getText()) === 'Remove') {
+            await botao.click();
+        }
+    }
+
+    async abrirDetalhesDoProduto(nomeProduto) {
+        const produto = await this.produtoPorNome(nomeProduto);
+        if (produto) {
+            const link = await produto.$('.inventory_item_name');
+            await link.click();
+        }
+    }
+
 }
 
 export default new InventoryPage()

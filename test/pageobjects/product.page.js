@@ -20,11 +20,11 @@ class ProductPage {
     return $('#back-to-products')}
 
     get addToCartButton() {
-    return $('#add-to-cart')
+    return $('[data-test="add-to-cart"]');
     }
 
     get removeButton() {
-    return $('#remove')
+    return $('[data-test="remove"]')
     }
 
     get cartBadge() {

@@ -8,8 +8,7 @@ import massadados from '../utils/users.json' with { type: 'json' }
 
 describe('Login', () => {
     it('Realizar login com sucesso', async () => {
-        
-
+    
         await $('#user-name').setValue(massadados.usuarios.valido.usuario)
         await $('#password').setValue(massadados.usuarios.valido.senha)
         await $('#login-button').click()
@@ -53,7 +52,7 @@ describe('Login', () => {
     it('Validar fechamento da mensagem de erro de login', async () => {
         await LoginPage.open();
 
-         // Tenta login com senha errada para disparar a mensagem de erro
+         // faz o login com senha errada para disparar a mensagem de erro
         await LoginPage.login(
             massadados.usuarios.valido.usuario,
             'senha_errada'

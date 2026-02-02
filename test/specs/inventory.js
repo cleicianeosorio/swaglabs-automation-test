@@ -23,7 +23,6 @@ describe('Ordenação de produtos', () => {
         await InventoryPage.sortBy('lohi')
 
         const prices = await InventoryPage.getAllPrices()
-
         const sorted = [...prices].sort((a, b) => a - b)
 
         expect(prices).toEqual(sorted)
@@ -35,7 +34,6 @@ describe('Ordenação de produtos', () => {
         await InventoryPage.sortBy('hilo')
 
         const prices = await InventoryPage.getAllPrices()
-
         const sorted = [...prices].sort((a, b) => b - a)
 
         expect(prices).toEqual(sorted)
@@ -45,7 +43,6 @@ describe('Ordenação de produtos', () => {
         await InventoryPage.sortBy('za')
 
         const names = await InventoryPage.getAllNames()
-
         const sorted = [...names].sort().reverse()
 
         expect(names).toEqual(sorted)
@@ -55,7 +52,6 @@ describe('Ordenação de produtos', () => {
         await InventoryPage.sortBy('az')
 
         const names = await InventoryPage.getAllNames()
-
         const sorted = [...names].sort()
 
         expect(names).toEqual(sorted)
