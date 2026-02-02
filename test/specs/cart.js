@@ -19,12 +19,10 @@ describe('Carrinho de compras', () => {
         await InventoryPage.addBackpackButton.click()
         await expect(InventoryPage.cartBadge).toHaveText('1')
         await expect(InventoryPage.removeBackpackButton).toHaveText('Remove')
-       //wait InventoryPage.addBackpackButton.click()
-      //wait expect(InventoryPage.cartBadge).toHaveText('1')
     })
 
     it('Cenário 2- Adicionar produto no carrinho pela tela do produto', async () => {
-        // navega explicitamente
+        
         const backpack = await $('a*=Sauce Labs Backpack')
         await backpack.click()
 

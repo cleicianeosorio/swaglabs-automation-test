@@ -52,7 +52,6 @@ class InventoryPage {
     return $('#remove-sauce-labs-backpack')
     }
 
-    // Badge do carrinho (serve pra todas as telas)
     get cartBadge() {
     return $('[data-test="shopping-cart-badge"]')
     }

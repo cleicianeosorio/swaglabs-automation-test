@@ -10,6 +10,10 @@ class LoginPage extends Page {
     get btnFecharErro () { return $('[data-test="error-button"]'); }
     get containerErro () { return $('.error-message-container'); }
 
+    async open() {
+    await super.open('/')
+    }
+
     async login (username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
