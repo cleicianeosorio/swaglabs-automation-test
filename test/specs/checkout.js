@@ -9,18 +9,14 @@ describe('Fluxo de Checkout - Finalização de Compra', () => {
         await LoginPage.open();
         await LoginPage.login('standard_user', 'secret_sauce');
         
-        // Validação de segurança: o login funcionou?
-        // O termo correto no WebdriverIO moderno é toHaveUrl com a opção 'containing'
-        await expect(browser).toHaveUrl(/inventory.html/); // Usando expressão regular
+        await expect(browser).toHaveUrl(/inventory.html/); 
 
         await InventoryPage.adicionarAoCarrinho('sauce-labs-backpack');
         await InventoryPage.linkCarrinho.click();
         
-        // Aguarda o botão de checkout estar pronto
         await CartPage.btnCheckout.waitForDisplayed();
         await CartPage.btnCheckout.click();
         
-        // Garante que estamos na tela de dados antes de qualquer 'it'
         await CheckoutPage.titleYourInformation.waitForDisplayed();
     });
 
@@ -35,11 +31,7 @@ describe('Validação de Campos Obrigatórios', () => {
         await LoginPage.open();
         await LoginPage.login('standard_user', 'secret_sauce');
         
-        // 2. VAI DIRETO PARA A URL DO CHECKOUT (Pula a etapa de clicar no carrinho)
-        // Isso evita o erro do botão 'Add to cart' que não aparece
         await browser.url('https://www.saucedemo.com/checkout-step-one.html');
-        
-        // 3. Garante que o formulário carregou antes de o 'it' tentar preencher
         await CheckoutPage.titleYourInformation.waitForDisplayed();
     })
 
