@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
 
-class InventoryPage {
+class InventoryPage extends Page {
     get titleProducts() {
     return $('//span[@class="title" and text()="Products"]')
     }
@@ -107,9 +107,12 @@ class InventoryPage {
     }
 
     async addProdutoPorNome(nomeProduto) {
-        const produto = await this.produtoPorNome(nomeProduto);
-        const botao = await produto.$('button');
-        await botao.click();
+        const itemContainer = await $(`//div[@data-test="inventory-item"][descendant::div[text()="${nomeProduto}"]]`);
+        const btnAdd = await itemContainer.$('button[id^="add-to-cart"]');
+
+        await btnAdd.waitForDisplayed();
+        await btnAdd.scrollIntoView({ block: 'center' });
+        await btnAdd.click();
     }
 
     async removeProdutoPorNome(nomeProduto) {
@@ -127,6 +130,16 @@ class InventoryPage {
             await link.click();
         }
     }
+
+    async adicionarAoCarrinho(produtoId) {
+        const btnAdd = await $(`[data-test="add-to-cart-${produtoId}"]`);
+        
+        await btnAdd.waitForDisplayed();
+        await btnAdd.click();
+    }
+
+    get btnCart() { return $('.shopping_cart_link'); }
+
 
 }
 

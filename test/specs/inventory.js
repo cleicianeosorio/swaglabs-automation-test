@@ -19,7 +19,7 @@ describe('Ordenação de produtos', () => {
         await InventoryPage.sortSelect.waitForDisplayed()
     })
 
-    it('Cenário 1 - Preço: Menor para Maior', async () => {
+    it('Preço: Menor para Maior', async () => {
         await InventoryPage.sortBy('lohi')
 
         const prices = await InventoryPage.getAllPrices()
@@ -30,7 +30,7 @@ describe('Ordenação de produtos', () => {
         expect(prices[prices.length - 1]).toBe(sorted[sorted.length - 1])
     })
 
-    it('Cenário 2 - Preço: Maior para Menor', async () => {
+    it('Preço: Maior para Menor', async () => {
         await InventoryPage.sortBy('hilo')
 
         const prices = await InventoryPage.getAllPrices()
@@ -39,7 +39,7 @@ describe('Ordenação de produtos', () => {
         expect(prices).toEqual(sorted)
     })
 
-    it('Cenário 3 - Nome: Z para A', async () => {
+    it('Nome: Z para A', async () => {
         await InventoryPage.sortBy('za')
 
         const names = await InventoryPage.getAllNames()
@@ -48,7 +48,7 @@ describe('Ordenação de produtos', () => {
         expect(names).toEqual(sorted)
     })
 
-    it('Cenário 4 - Nome: A para Z', async () => {
+    it(' Nome: A para Z', async () => {
         await InventoryPage.sortBy('az')
 
         const names = await InventoryPage.getAllNames()

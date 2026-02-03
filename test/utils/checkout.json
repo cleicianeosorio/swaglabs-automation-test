@@ -1,0 +1,24 @@
+    {
+    "usuarioValido": {
+        "nome": "Marina",
+        "sobrenome": "Santos",
+        "cep": "12345"
+    },
+    "erros": [
+        { 
+            "campo": "First Name", 
+            "dados": { "nome": "", "sobrenome": "Santos", "cep": "12345" }, 
+            "mensagem": "Error: First Name is required" 
+        },
+        { 
+            "campo": "Last Name", 
+            "dados": { "nome": "Marina", "sobrenome": "", "cep": "12345" }, 
+            "mensagem": "Error: Last Name is required" 
+        },
+        { 
+            "campo": "Postal Code", 
+            "dados": { "nome": "Marina", "sobrenome": "Santos", "cep": "" }, 
+            "mensagem": "Error: Postal Code is required" 
+        }
+    ]
+}

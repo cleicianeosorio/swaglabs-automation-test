@@ -157,7 +157,7 @@ E o badge do carrinho deve ser atualizado subtraindo a quantidade removida.
 Cenário 3 (Botão Checkout):
 Dado que o usuário está na página do carrinho com pelo menos um item adicionado.
 Quando clica no botão "Checkout".
-Então o sistema deve direcionar o usuário para a primeira etapa do checkou
+Então o sistema deve direcionar o usuário para a primeira etapa do checkout
 
 CT-013: Tentativa de Checkout com Carrinho Vazio (Cenário de Exceção)
 
@@ -180,7 +180,6 @@ E insere um código postal válido no campo "Zip/Postal Code".
 Quando clica no botão "Continue".
 Então o sistema deve redirecionar o usuário para a página de resumo (/checkout-step-two.html).
 E deve validar que o título da página é "Checkout: Overview".
-E deve verificar se os botões "Cancel" e "Finish" estão visíveis na tela.
 
 CT-015: Validar campos obrigatórios no Checkout (Caminho Triste) 
 

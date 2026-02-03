@@ -52,7 +52,7 @@ describe('Login', () => {
     it('Validar fechamento da mensagem de erro de login', async () => {
         await LoginPage.open();
 
-         // faz o login com senha errada para disparar a mensagem de erro
+         // faz o login com senha errada disparar a mensagem de erro
         await LoginPage.login(
             massadados.usuarios.valido.usuario,
             'senha_errada'
