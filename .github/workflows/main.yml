@@ -1,0 +1,27 @@
+name: WebdriverIO CI/CD 
+
+on:
+  push:
+    branches: [ main ] 
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  automation-tests:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurando o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' 
+          cache: 'npm'
+
+      - name: Instalando dependências
+        run: npm install
+
+      - name: Executando a Suíte de Testes
+        run: npx wdio run ./wdio.conf.js
