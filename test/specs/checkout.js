@@ -4,7 +4,7 @@ import CartPage from '../pageobjects/cart.page.js';
 import CheckoutPage from '../pageobjects/checkout.page.js';
 import massaCheckout from '../utils/checkout.json' with { type: 'json' };
 
-describe('Fluxo de Checkout - Finalização de Compra', () => {
+describe('Fluxo de Checkout - Validando direcionamento para Overview',() => {
     beforeEach(async () => {
         await LoginPage.open();
         await LoginPage.login('standard_user', 'secret_sauce');
@@ -165,7 +165,7 @@ describe('Finalizar compra e validar retorno ao início', () => {
         await CheckoutPage.btnBackHome.click();
 
         await expect(browser).toHaveUrl(expect.stringContaining('inventory.html'));
-        
+
         const badgeExiste = await InventoryPage.badgeCarrinho.isExisting();
         await expect(badgeExiste).toBe(false); 
     });

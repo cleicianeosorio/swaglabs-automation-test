@@ -7,6 +7,7 @@ import massadados from '../utils/users.json' with { type: 'json' }
     })
 
 describe('Login', () => {
+
     it('Realizar login com sucesso', async () => {
     
         await $('#user-name').setValue(massadados.usuarios.valido.usuario)
@@ -92,7 +93,7 @@ describe('Login', () => {
         
         const existe = await LoginPage.containerErro.isExisting();
         await expect(existe).toBe(false);
-        })
+    })
     
 
 })
