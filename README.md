@@ -22,3 +22,7 @@ Para rodar a suíte completa de testes  configurada no arquivo wdio.conf.js, uti
 
 Bash
 npx wdio run ./wdio.conf.js
+
+Integração Contínua (CI/CD)
+Como parte da estratégia de garantia de qualidade deste projeto, implementei uma pipeline de automação utilizando GitHub Actions. O objetivo é garantir que o ciclo de feedback seja o mais curto possível, validando cada nova alteração de código de forma automática antes que ela chegue ao ambiente de produção.
+A cada push ou pull request, a suíte de testes é disparada em um ambiente limpo (Ubuntu Linux), garantindo que a aplicação se comporte conforme o esperado em diferentes cenários.
