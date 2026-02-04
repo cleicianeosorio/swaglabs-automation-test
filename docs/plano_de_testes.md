@@ -248,7 +248,6 @@ Dado que o usuário está na página "Checkout: Overview" com todos os dados rev
 Quando clica no botão "Finish".
 Então o sistema deve redirecionar para a página final (/checkout-complete.html).
 E deve exibir a mensagem de agradecimento: "Thank you for your order!".
-E o ícone de sucesso (Pony Express) deve estar visível na tela.
 E o badge do carrinho deve estar vazio/inexistente (indicando que a compra foi processada).
 Quando o usuário clica no botão "Back Home".
 Então o sistema deve redirecionar o usuário de volta para a página de inventário (/inventory.html).

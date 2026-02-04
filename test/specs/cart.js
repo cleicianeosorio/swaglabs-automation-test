@@ -133,10 +133,10 @@ describe('Validar botões de ação na página do carrinho', () => {
         const removeButtons = await $$('[id^="remove-"]')
         for (const btn of removeButtons) {
         await btn.click()
-    }
+        }
 
-    await InventoryPage.adicionarAoCarrinho(BIKE_LIGHT_ID);
-    await InventoryPage.linkCarrinho.click();
+        await InventoryPage.adicionarAoCarrinho(BIKE_LIGHT_ID);
+        await InventoryPage.linkCarrinho.click();
         
     });
 
